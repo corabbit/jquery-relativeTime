@@ -71,7 +71,8 @@ $.fn.relativeTime = function(op) {
 	
 	function calcDist(from) {
 		var date = new Date;
-		date.setTime(Date.parse(from));
+		// date.setTime(Date.parse(from));
+		date.setTime(from * 1000);
 		
 		var sec = ((new Date - date) / 1000) / 60;
 		return sec.floor();
