@@ -13,9 +13,11 @@
  */
 ;(function($) {
 
-Number.prototype.floor = function() {
-	return Math.floor(this);
-};
+if(!Number.prototype.floor) {
+	Number.prototype.floor = function() {
+		return Math.floor(this);
+	};
+}
 
 $.fn.relativeTime = function(op) {
 	
@@ -26,7 +28,7 @@ $.fn.relativeTime = function(op) {
 			min: 'a minute ago',
 			mins: ' minutes ago',
 			hour: 'an hour ago',
-			hours: ' hors ago',
+			hours: ' hours ago',
 			day: '1 day ago',
 			days: ' days ago',
 			month: '1 month ago',
